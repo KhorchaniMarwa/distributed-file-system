@@ -17,6 +17,18 @@ public class Peer {
             this.ownedFiles = new ArrayList<>();
             this.connectedPeers = new ArrayList<>();
         }
+        //getters
+        public int getPeerID() {
+            return peerID;
+        }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public int getPort() {
+        return port;
+    }
     
     public static void main (String[] args){
         PeerServer peerServer = new PeerServer(5000);
