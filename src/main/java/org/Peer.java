@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Peer {
     private int peerID;
-    private int IP;
+    private String IP;
     private int port;
-    private ArrayList<Peer> ownedFiles = new ArrayList();
+    private ArrayList<String> ownedFiles = new ArrayList();
 
-    public  Peer(int peerID,int port,int IP, ArrayList<Peer> ownedFiles){
+    public  Peer(int peerID,int port,String IP, ArrayList<String> ownedFiles){
         this.peerID = peerID;
         this.port = port;
         this.IP = IP;
