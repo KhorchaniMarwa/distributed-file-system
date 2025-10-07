@@ -29,6 +29,25 @@ public class Peer {
     public int getPort() {
         return port;
     }
+
+    //file management
+    public void addFile(String filePath) {
+        ownedFiles.add(filePath);
+        System.out.println("File added: " + filePath);
+    }
+
+    public void removeFile(String filePath) {
+        ownedFiles.remove(filePath);
+        System.out.println("File removed: " + filePath);
+    }
+
+    public void listOwnedFiles() {
+        System.out.println("Files owned by Peer " + peerID + ":");
+        for (String file : ownedFiles) {
+            System.out.println("- " + file);
+        }
+    }
+
     
     public static void main (String[] args){
         PeerServer peerServer = new PeerServer(5000);
