@@ -61,6 +61,17 @@ public class Peer {
         }
     }
 
+    //start client/server
+    public void startServer() {
+        Thread serverThread = new Thread(() -> new PeerServer(port));
+        serverThread.start();
+    }
+
+    public void connectAsClient(String targetIp, int targetPort, String filePath) {
+        Thread clientThread = new Thread(() -> new PeerClient(targetIp, targetPort, filePath));
+        clientThread.start();
+    }
+
     
     public static void main (String[] args){
         PeerServer peerServer = new PeerServer(5000);
