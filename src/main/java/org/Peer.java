@@ -74,8 +74,12 @@ public class Peer {
 
     
     public static void main (String[] args){
-        PeerServer peerServer = new PeerServer(5000);
-        PeerClient pc = new PeerClient("127.0.0.1", 5000, "/home/marwa/keys.text");
+        Peer peer = new Peer(1, "127.0.0.1", 5000);
+        peer.addFile("/home/marwa/keys.txt");
+
+        peer.startServer(); // start listening
+        peer.connectAsClient("127.0.0.1", 5000, "/home/marwa/keys.txt");
+    }
     }
 
-}
+
