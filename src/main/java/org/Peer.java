@@ -48,6 +48,19 @@ public class Peer {
         }
     }
 
+    //peer connection
+    public void connectToPeer(Peer peer) {
+        connectedPeers.add(peer);
+        System.out.println("Connected to peer " + peer.getPeerID());
+    }
+
+    public void listConnectedPeers() {
+        System.out.println("Connected peers:");
+        for (Peer p : connectedPeers) {
+            System.out.println("- Peer " + p.getPeerID() + " (" + p.getIp() + ":" + p.getPort() + ")");
+        }
+    }
+
     
     public static void main (String[] args){
         PeerServer peerServer = new PeerServer(5000);
