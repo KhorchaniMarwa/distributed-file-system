@@ -18,7 +18,21 @@ public class Peer {
         this.ownedFiles = new ArrayList<>();
         this.connectedPeers = new ArrayList<>();
     }
-    
+
+    //getters
+    public int getPeerID() {
+        return peerID;
+    }
+
+    public String getIp() {
+        return IP;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+
     public static void main (String[] args){
         PeerServer peerServer = new PeerServer(5000);
         PeerClient pc = new PeerClient("127.0.0.1", 5000, "/home/marwa/keys.text");
