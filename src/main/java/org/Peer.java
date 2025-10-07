@@ -1,18 +1,22 @@
 package org;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Peer {
     private int peerID;
     private String IP;
     private int port;
-    private ArrayList<String> ownedFiles = new ArrayList();
+    private ArrayList<String> ownedFiles;
+    private List<Peer> connectedPeers;
 
-    public  Peer(int peerID,int port,String IP, ArrayList<String> ownedFiles){
+
+    public  Peer(int peerID,int port,String IP, ArrayList<String> ownedFiles, List<Peer> connectedPeers){
         this.peerID = peerID;
         this.port = port;
         this.IP = IP;
-        this.ownedFiles = ownedFiles;
+        this.ownedFiles = new ArrayList<>();
+        this.connectedPeers = new ArrayList<>();
     }
     
     public static void main (String[] args){
